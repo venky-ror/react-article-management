@@ -5,6 +5,8 @@ import { Redirect, useHistory } from "react-router";
 const SignupComponent = ({ user, setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [mobile_number, setPhone] = useState("");
   const history = useHistory();
   if (user === "Logged") {
     return <Redirect to={"/"} />;
@@ -14,11 +16,13 @@ const SignupComponent = ({ user, setUser }) => {
     e.preventDefault();
     try {
       const data = await axios.post(
-        "xxxxx/api/v1/users",
+        "http://xxxxx/api/v1/users",
         {
           user: {
             email: email,
             password: password,
+            mobile_number: mobile_number,
+            name: name
           },
         }
       );
@@ -37,6 +41,28 @@ const SignupComponent = ({ user, setUser }) => {
         onSubmit={handleSubmit}
         className="my-5 d-flex flex-column  col-10 col-md-8 mx-auto p-5"
       >
+       <label htmlFor="name" className="col-form-label my-2">
+          Name
+        </label>
+        <input
+          onChange={(e) => setName(e.target.value)}
+          name="name"
+          className="my-3"
+          type="text"
+          placeholder="Name"
+          required
+        />
+        <label htmlFor="mobile_number" className="col-form-label my-2">
+          Phone
+        </label>
+        <input
+          onChange={(e) => setPhone(e.target.value)}
+          name="mobile_number"
+          className="my-3"
+          type="text"
+          placeholder="Phone"
+          required
+        />
         <label htmlFor="email" className="col-form-label my-2">
           Email
         </label>
@@ -45,7 +71,7 @@ const SignupComponent = ({ user, setUser }) => {
           name="email"
           className="my-3"
           type="email"
-          placeholder="email"
+          placeholder="Email"
           required
         />
         <label htmlFor="password" className="col-form-label my-2">
@@ -56,7 +82,7 @@ const SignupComponent = ({ user, setUser }) => {
           name="password"
           className="my-3"
           type="password"
-          placeholder="password"
+          placeholder="Password"
           required
         />
         <button className="my-2 btn btndark" type="submit">
