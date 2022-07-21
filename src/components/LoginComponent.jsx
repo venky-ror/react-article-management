@@ -10,7 +10,7 @@ const LoginComponent = ({ setUser, user }) => {
     e.preventDefault();
     try {
       const resp = await axios.post(
-        "http://ec2-13-233-39-162.ap-south-1.compute.amazonaws.com/api/v1/users/sign_in",
+        "xxxxx/api/v1/users/sign_in",
         {
           user: {
             email: email,

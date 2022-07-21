@@ -14,7 +14,7 @@ const SignupComponent = ({ user, setUser }) => {
     e.preventDefault();
     try {
       const data = await axios.post(
-        "http://ec2-13-233-39-162.ap-south-1.compute.amazonaws.com/api/v1/users",
+        "xxxxx/api/v1/users",
         {
           user: {
             email: email,

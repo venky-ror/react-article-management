@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const ARTICLE_API_BASE_URL = "http://ec2-13-233-39-162.ap-south-1.compute.amazonaws.com/api/v1/articles";
+const ARTICLE_API_BASE_URL = "xxxxx/api/v1/articles";
 
 class ArticleService {
 
