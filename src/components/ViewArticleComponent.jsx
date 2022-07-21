@@ -20,23 +20,27 @@ class ViewArticleComponent extends Component {
 
     render() {
         return (
-            <div>
-                <br></br>
-                <div className = "card col-md-6 offset-md-3">
-                    <h3 className = "text-center"> View Article Details</h3>
-                    <div className = "card-body">
-                        <div className = "row">
-                            <label> Title: </label>
-                            <div> { this.state.article.title }</div>
-                        </div>
-                        <div className = "row">
-                            <label> Body: </label>
-                            <div> { this.state.article.body }</div>
+         <div>
+            <br></br>
+            <div className = "container">
+                <div className = "row">
+                    <div className = "card col-md-6 offset-md-3 offset-md-3">
+                        <h3 className="text-center">View Article Details</h3>
+                        <div className = "card-body">
+                                <div className = "form-group">
+                                    <label> Title: </label>
+                                    <input placeholder="Title" name="title" className="form-control" value={this.state.article.title}/>
+                                </div>
+                                <div className = "form-group">
+                                    <label> Body: </label>
+                                    <input placeholder="Body" name="body" className="form-control" value={this.state.article.body}/>
+                                </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
+        </div>
         )
     }
 }
